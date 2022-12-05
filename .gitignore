@@ -5,3 +5,8 @@ node_modules/
 
 target/
 Cargo.lock
+
+
+# Added by cargo
+
+/target
