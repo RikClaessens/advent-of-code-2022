@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import test from 'node:test';
-import { getInput, getInputAsString } from '../util';
+import { getInput } from '../util';
 
 const day = 'day07';
 const testInput = getInput(`src/${day}/test.txt`);
