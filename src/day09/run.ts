@@ -93,6 +93,3 @@ test('part 2', () => {
   console.log('Part 1: ' + solve(input, 2));
   console.log('Part 2: ' + solve(input, 10));
 })();
-
-// 2193 too low
-// 2194 too low
