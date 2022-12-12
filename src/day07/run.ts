@@ -6,7 +6,7 @@ const day = 'day07';
 const testInput = getInput(`src/${day}/test.txt`);
 const input = getInput(`src/${day}/input.txt`);
 
-const getDirs = (input: string[], maxDirSize: number) => {
+const getDirs = (input: string[]) => {
   const dirs: any = {};
   let currentPath: string[] = [];
 
@@ -66,7 +66,7 @@ const getDirs = (input: string[], maxDirSize: number) => {
 };
 
 const getSumOfDirsOfSize = (input: string[], maxDirSize: number) => {
-  const dirs = getDirs(input, maxDirSize);
+  const dirs = getDirs(input);
   const result = Object.keys(dirs)
     .filter((key) => dirs[key].size <= maxDirSize)
     .reduce((total: number, key: string) => {
@@ -80,7 +80,7 @@ const getDirToDelete = (
   totalDiskSize: number,
   wantedFreeSpace: number,
 ) => {
-  const dirs = getDirs(input, Number.MAX_VALUE);
+  const dirs = getDirs(input);
   const needToCleanUp = wantedFreeSpace - (totalDiskSize - dirs['/'].size);
   const result = Object.keys(dirs)
     .filter((key) => dirs[key].size >= needToCleanUp)
@@ -102,5 +102,3 @@ test('part 2', () => {
   console.log('Part 1: ' + getSumOfDirsOfSize(input, 100000));
   console.log('Part 2: ' + getDirToDelete(input, 70000000, 30000000));
 })();
-
-// part 1, 1196136, too low
